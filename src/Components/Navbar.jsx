@@ -29,7 +29,7 @@ function BasicExample({mobile}) {
               <div className='d-flex align-items-center'>
                 
                 {
-                    username!='' ? <div>
+                    username!='' ? <div style={{cursor:'pointer'}} onClick={()=>updateUser('')}>
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp" style={{width: '2rem'}} alt="" />
                         <span style={{fontWeight: '500'}} className='mx-3'>{username}</span>
                     </div> : <div style={{fontSize: '0.85rem', cursor:'pointer'}} onClick={()=>setShowRegisterModal(!showRegisterModal)}> <span style={{fontWeight: '500'}}>Create Account </span><span className='text-primary' style={{fontWeight: '500'}}>It's Free</span></div>
