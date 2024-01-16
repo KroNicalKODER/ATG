@@ -1,0 +1,14 @@
+.follow-btn{
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: #EDEEF0;
+    padding: 4px 15px;
+    border-radius: 1rem;
+    border: none;
+    transition: all 300ms ease-in-out;
+}
+
+.follow-btn-clicked{
+    background: black;
+    color: white;
+}

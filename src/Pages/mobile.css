@@ -1,0 +1,14 @@
+.box {
+    height: 54px;
+    width: 54px;
+    }
+    .box .circle {
+    background: linear-gradient(180deg, rgb(255, 91.8, 91.8) 0%, rgb(240, 86.4, 138.34) 100%);
+    border-radius: 27px;
+    box-shadow: 0px 0px 2px #00000014, 0px 2px 4px #0000002e;
+    height: 54px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 54px;
+    }
