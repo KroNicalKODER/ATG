@@ -1,12 +1,21 @@
-import React, { useLayoutEffect, useState, useRef } from 'react'
+import React, { useLayoutEffect, useState, useRef, useContext } from 'react'
 import { Modal, Button, Container, Form, Col, Row } from 'react-bootstrap';
 import imgw from '/Static/create-clip.png'
+import {UserContext} from '../UserProvider'
+
 
 function Register(props) {
 
+    const {username, updateUser} = useContext(UserContext)
     const [login,setLogin] = useState(false)
     const modalRef = useRef(null)
     const height = 455
+
+    const handleClick = () => {
+        // console.log('before')
+        updateUser('Mradul')
+        // console.log('after',username)
+    }
 
     return (
       <Modal
@@ -80,7 +89,7 @@ function Register(props) {
                                 </Row>
                                 :
                                 <Row className='g-0'>
-                                    <Button variant='primary' className='rounded-pill my-4'>Create Account</Button>
+                                    <Button variant='primary' className='rounded-pill my-4' onClick={()=>handleClick()}>Create Account</Button>
                                 </Row>
                             }
                         </Form>
@@ -96,7 +105,7 @@ function Register(props) {
                                 props.mobile?
                                 <Row className='g-0 my-4 d-flex'>
                                     <Col>
-                                        <Button variant='primary' className='rounded-pill'>SignIn</Button>
+                                        <Button variant='primary' className='rounded-pill' onClick={()=>handleClick}>SignIn</Button>
                                     </Col>
                                     <Col className='d-flex align-items-center justify-content-end' style={{fontSize:'0.75rem', fontWeight:'500'}}>
                                         <span className='' style={{textDecoration:'underline', cursor:'pointer'}} onClick={()=>setLogin(!login)}>or, Create a new account</span>
@@ -104,7 +113,7 @@ function Register(props) {
                                 </Row>
                                 :
                                 <Row className='g-0'>
-                                    <Button variant='primary' className='rounded-pill my-4'>SignIn</Button>
+                                    <Button variant='primary' className='rounded-pill my-4'  onClick={()=>handleClick()}>SignIn</Button>
                                 </Row>
                             }
 
@@ -113,9 +122,9 @@ function Register(props) {
 
                 <div className='d-flex border border-black-50 justify-content-center py-2 align-items-center' style={{borderRadius: '3px'}}>
                     <img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" style={{width:'1rem'}} alt="" />
-                    <span style={{fontSize:'0.70rem', fontWeight:'500', marginLeft:'0.8rem'}}>Sign up with facebook</span>
+                    <span style={{fontSize:'0.70rem', fontWeight:'500', marginLeft:'0.8rem'}} onClick={()=>handleClick()}>Sign up with facebook</span>
                 </div>
-                <div className='d-flex border border-black-50 justify-content-center py-2 align-items-center' style={{borderRadius: '3px', marginBottom:'2rem', marginTop:'0.7rem'}}>
+                <div className='d-flex border border-black-50 justify-content-center py-2 align-items-center' onClick={()=>handleClick()} style={{borderRadius: '3px', marginBottom:'2rem', marginTop:'0.7rem'}}>
                     <img src="https://cdn.iconscout.com/icon/free/png-256/free-google-1772223-1507807.png" style={{width:'1rem'}} alt="" />
                     <span style={{fontSize:'0.70rem', fontWeight:'500', marginLeft:'0.8rem'}}>Sign up with google</span>
                 </div>
